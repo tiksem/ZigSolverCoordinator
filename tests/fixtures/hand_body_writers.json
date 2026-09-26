@@ -1,0 +1,238 @@
+{
+ "writeStats": [
+  {
+   "name": "replace-and-insert",
+   "body": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n",
+   "byName": {
+    "Big Stack Bob": {
+     "VPIP": 41,
+     "PFR": 12.34,
+     "ATS": 50
+    },
+    "Sasha M": {
+     "VPIP": 22.25,
+     "3BET": 7
+    }
+   },
+   "expected": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nVPIP=22.3%\n3BET=7%\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=41%\nPFR=12.3%\n3BET=6%\nAF=1.64\nWTSD=41%\nATS=50%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n"
+  },
+  {
+   "name": "empty-values-ignored",
+   "body": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n",
+   "byName": {
+    "Sasha M": {
+     "VPIP": "",
+     "PFR": null,
+     "ATS": 33.349
+    }
+   },
+   "expected": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nATS=33.3%\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n"
+  },
+  {
+   "name": "unknown-name",
+   "body": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n",
+   "byName": {
+    "Nobody": {
+     "VPIP": 40
+    }
+   },
+   "expected": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n"
+  },
+  {
+   "name": "crlf",
+   "body": "Total pot 1.5BB\r\n\r\nAnna K\r\nposition=SB\r\nraise 3BB\r\nVPIP=49%\r\nPFR=31%\r\n3BET=14%\r\nstack=37.2BB\r\n\r\n*me*\r\nposition=BB\r\nwaiting\r\nhand=A♠K♦\r\nstack=52.8BB\r\n",
+   "byName": {
+    "Anna K": {
+     "VPIP": 30
+    }
+   },
+   "expected": "Total pot 1.5BB\r\n\r\nAnna K\r\nposition=SB\r\nraise 3BB\r\nVPIP=30%\r\nPFR=31%\r\n3BET=14%\r\nstack=37.2BB\r\n\r\n*me*\r\nposition=BB\r\nwaiting\r\nhand=A♠K♦\r\nstack=52.8BB\r\n"
+  },
+  {
+   "name": "no-stack-line",
+   "body": "Anna\nposition=SB\nraise 3BB\n\n*me*\nposition=BB\nhand=AsKs\nstack=10BB\n",
+   "byName": {
+    "Anna": {
+     "VPIP": 12.5,
+     "PFR": 99.95
+    }
+   },
+   "expected": "Anna\nposition=SB\nraise 3BB\nVPIP=12.5%\nPFR=100%\n\n*me*\nposition=BB\nhand=AsKs\nstack=10BB\n"
+  },
+  {
+   "name": "af-ratio",
+   "body": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n",
+   "byName": {
+    "Big Stack Bob": {
+     "AF": 2.55
+    }
+   },
+   "expected": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=2.6\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n"
+  },
+  {
+   "name": "nothing",
+   "body": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n",
+   "byName": {},
+   "expected": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n"
+  }
+ ],
+ "writeTournament": [
+  {
+   "name": "replace-all",
+   "body": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n",
+   "values": {
+    "playersLeft": 700,
+    "playersPaid": 90,
+    "averageStack": 80.04
+   },
+   "expected": "This is online poker tournament, 700 players left, 80.0BB average stack, 90 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n"
+  },
+  {
+   "name": "append-before-pot",
+   "body": "Total pot 12.5BB\n\nIvan P\nposition=UTG\nfold\nVPIP=21%\nPFR=15%\nstack=38.4BB\n\nMarta L\nposition=UTG+1\nfold\nVPIP=33%\nPFR=11%\nstack=52.1BB\n\nDuy N\nposition=UTG+2\ncall\nVPIP=44%\nPFR=13%\n3BET=4%\nstack=27.9BB\n\n老虎\nposition=LJ\nfold\nVPIP=18%\nPFR=14%\nstack=61.3BB\n\nGrzegorz W\nposition=HJ\nraise 3BB\nVPIP=27%\nPFR=21%\n3BET=9%\nATS=48%\nstack=73.6BB\n\n*me*\nposition=CO\ncall\nhand=8♦8♣\nstack=45.2BB\n\nAna Sofia\nposition=BTN\nfold\nVPIP=30%\nPFR=19%\nstack=19.8BB\n\nKenji T\nposition=SB\nfold\nVPIP=25%\nPFR=16%\nstack=88.0BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\nAF=1.64\nstack=140.5BB\n\nBoard: 8♠ K♦ 2♥\n\nBig Stack Bob\nposition=BB\ncheck\nstack=140.5BB\n\nDuy N\nposition=UTG+2\ncheck\nstack=27.9BB\n\nGrzegorz W\nposition=HJ\nbet 6BB\nstack=67.6BB\n\n*me*\nposition=CO\nwaiting\nhand=8♦8♣\nstack=45.2BB\n",
+   "values": {
+    "playersLeft": 1234.6,
+    "averageStack": 55.55
+   },
+   "expected": "1235 players left, 55.6BB average stack. Total pot 12.5BB\n\nIvan P\nposition=UTG\nfold\nVPIP=21%\nPFR=15%\nstack=38.4BB\n\nMarta L\nposition=UTG+1\nfold\nVPIP=33%\nPFR=11%\nstack=52.1BB\n\nDuy N\nposition=UTG+2\ncall\nVPIP=44%\nPFR=13%\n3BET=4%\nstack=27.9BB\n\n老虎\nposition=LJ\nfold\nVPIP=18%\nPFR=14%\nstack=61.3BB\n\nGrzegorz W\nposition=HJ\nraise 3BB\nVPIP=27%\nPFR=21%\n3BET=9%\nATS=48%\nstack=73.6BB\n\n*me*\nposition=CO\ncall\nhand=8♦8♣\nstack=45.2BB\n\nAna Sofia\nposition=BTN\nfold\nVPIP=30%\nPFR=19%\nstack=19.8BB\n\nKenji T\nposition=SB\nfold\nVPIP=25%\nPFR=16%\nstack=88.0BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\nAF=1.64\nstack=140.5BB\n\nBoard: 8♠ K♦ 2♥\n\nBig Stack Bob\nposition=BB\ncheck\nstack=140.5BB\n\nDuy N\nposition=UTG+2\ncheck\nstack=27.9BB\n\nGrzegorz W\nposition=HJ\nbet 6BB\nstack=67.6BB\n\n*me*\nposition=CO\nwaiting\nhand=8♦8♣\nstack=45.2BB\n"
+  },
+  {
+   "name": "no-header",
+   "body": "Anna\nposition=SB\nraise 3BB\nstack=97BB\n\n*me*\nposition=BB\nhand=AsKs\nstack=99BB\n",
+   "values": {
+    "playersLeft": 50,
+    "playersPaid": 9,
+    "averageStack": 30
+   },
+   "expected": "This is online poker tournament, 50 players left, 30.0BB average stack, 9 players paid\n\nAnna\nposition=SB\nraise 3BB\nstack=97BB\n\n*me*\nposition=BB\nhand=AsKs\nstack=99BB\n"
+  },
+  {
+   "name": "header-without-pot",
+   "body": "Online tournament.\n\nAnna\nposition=SB\nraise 3BB\nstack=97BB\n\n*me*\nposition=BB\nhand=AsKs\nstack=99BB\n",
+   "values": {
+    "playersPaid": 9
+   },
+   "expected": "Online tournament, 9 players paid\n\nAnna\nposition=SB\nraise 3BB\nstack=97BB\n\n*me*\nposition=BB\nhand=AsKs\nstack=99BB\n"
+  },
+  {
+   "name": "alt-average-wording",
+   "body": "Tournament, average stack 41.2, Total pot 3BB\n\nAnna\nposition=SB\nraise 3BB\nstack=97BB\n\n*me*\nposition=BB\nhand=AsKs\nstack=99BB\n",
+   "values": {
+    "averageStack": 12.3
+   },
+   "expected": "Tournament, average stack 12.3, Total pot 3BB\n\nAnna\nposition=SB\nraise 3BB\nstack=97BB\n\n*me*\nposition=BB\nhand=AsKs\nstack=99BB\n"
+  },
+  {
+   "name": "crlf-pot-on-own-line",
+   "body": "This is online poker tournament, 100 players left.\r\nTotal pot 4BB\r\n\r\nAnna\r\nposition=SB\r\nraise 3BB\r\nstack=97BB\r\n\r\n*me*\r\nposition=BB\r\nhand=AsKs\r\nstack=99BB\r\n",
+   "values": {
+    "playersPaid": 12,
+    "averageStack": 20
+   },
+   "expected": "This is online poker tournament, 100 players left, 20.0BB average stack, 12 players paid.\r\nTotal pot 4BB\r\n\r\nAnna\r\nposition=SB\r\nraise 3BB\r\nstack=97BB\r\n\r\n*me*\r\nposition=BB\r\nhand=AsKs\r\nstack=99BB\r\n"
+  },
+  {
+   "name": "not-a-body",
+   "body": "Hood: reading stats",
+   "values": {
+    "playersLeft": 5
+   },
+   "expected": "Hood: reading stats"
+  },
+  {
+   "name": "nothing-readable",
+   "body": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n",
+   "values": {
+    "playersLeft": "",
+    "averageStack": null
+   },
+   "expected": "This is online poker tournament, 781 players left, 78.9BB average stack, 92 players paid. Total pot 21.5BB\n\nK Barsukov\nposition=UTG\nfold\nVPIP=25%\nPFR=19%\n3BET=8%\nstack=147.8BB\n\nDmitri O\nposition=LJ\nraise 2.5BB\nVPIP=31%\nPFR=24%\n3BET=11%\nATS=44%\nstack=96.4BB\n\n*me*\nposition=CO\ncall\nhand=Q♠J♠\nstack=88.2BB\n\nNikolai V\nposition=BTN\nfold\nVPIP=19%\nPFR=14%\nstack=54.0BB\n\nSasha M\nposition=SB\nfold\nstack=61.7BB\n\nBig Stack Bob\nposition=BB\ncall\nVPIP=38%\nPFR=12%\n3BET=6%\nAF=1.64\nWTSD=41%\nstack=203.5BB\n\nBoard: 4♥ T♦ 8♣\n\nBig Stack Bob\nposition=BB\ncheck\nstack=201.0BB\n\nDmitri O\nposition=LJ\nbet 4.1BB\nstack=91.8BB\n\n*me*\nposition=CO\nwaiting\nhand=Q♠J♠\nstack=85.7BB\n"
+  }
+ ],
+ "formatting": {
+  "statLine": [
+   {
+    "key": "VPIP",
+    "value": 41,
+    "expected": "VPIP=41%"
+   },
+   {
+    "key": "PFR",
+    "value": 12.34,
+    "expected": "PFR=12.3%"
+   },
+   {
+    "key": "ATS",
+    "value": 33.35,
+    "expected": "ATS=33.4%"
+   },
+   {
+    "key": "AF",
+    "value": 1.649,
+    "expected": "AF=1.6"
+   },
+   {
+    "key": "3BET",
+    "value": 0.05,
+    "expected": "3BET=0.1%"
+   },
+   {
+    "key": "VPIP",
+    "value": 99.95,
+    "expected": "VPIP=100%"
+   },
+   {
+    "key": "VPIP",
+    "value": "7",
+    "expected": "VPIP=7%"
+   }
+  ],
+  "tournamentPhrase": [
+   {
+    "key": "playersLeft",
+    "value": 781,
+    "expected": "781 players left"
+   },
+   {
+    "key": "playersPaid",
+    "value": 92.5,
+    "expected": "93 players paid"
+   },
+   {
+    "key": "averageStack",
+    "value": 78.9,
+    "expected": "78.9BB average stack"
+   },
+   {
+    "key": "averageStack",
+    "value": 5,
+    "expected": "5.0BB average stack"
+   },
+   {
+    "key": "averageStack",
+    "value": 12.25,
+    "expected": "12.3BB average stack"
+   }
+  ],
+  "tournamentHeaderLine": [
+   {
+    "values": {
+     "playersLeft": 10,
+     "playersPaid": 3,
+     "averageStack": 20
+    },
+    "expected": "This is online poker tournament, 10 players left, 20.0BB average stack, 3 players paid"
+   },
+   {
+    "values": {
+     "averageStack": 7.5
+    },
+    "expected": "This is online poker tournament, 7.5BB average stack"
+   },
+   {
+    "values": {},
+    "expected": ""
+   }
+  ]
+ }
+}

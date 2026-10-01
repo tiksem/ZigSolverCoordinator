@@ -34,7 +34,8 @@ CANCEL_TIMEOUT = 5.0
 HEALTH_TIMEOUT = 8.0
 SCREEN_ERROR_TIMEOUT = 60.0
 
-_TUNING = ["gateExploitability", "targetExploitability", "minSolveTime"]
+_TUNING = ["gateExploitability", "targetExploitability", "minSolveTime",
+           "maxNetSolveTime"]
 
 
 def detail_of(payload: Any, fallback: str) -> Any:

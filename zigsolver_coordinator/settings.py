@@ -15,6 +15,11 @@ DEFAULTS: dict[str, Any] = {
     # `maxSolveTime` — wall-time budget for the flop solve, in seconds. The
     # balancer picks the strongest regime that fits it.
     "maxSolveTime": 15,
+    # `maxNetSolveTime` — seconds. The budget of the net solve ITSELF (its CFR
+    # iterations; range generation, tree build and setup come on top) when the
+    # balancer settles on the net-truncated flow; the ladder itself is still
+    # priced against `maxSolveTime`. None = the net spends `maxSolveTime`.
+    "maxNetSolveTime": None,
     # Send each snapshot to the API as it arrives. Off = only Re-solve and a
     # change of regime call the solver.
     "autoSolve": True,
@@ -51,6 +56,7 @@ DEFAULTS: dict[str, Any] = {
 
 LIMITS: dict[str, tuple[float, float]] = {
     "maxSolveTime": (0.5, 600),
+    "maxNetSolveTime": (0.5, 600),
     "statHands": (1, 1_000_000),
     "gateExploitability": (0, 100),
     "targetExploitability": (0.01, 100),
@@ -61,8 +67,8 @@ BUDGET_PRESETS = [5, 10, 15, 30, 60, 120]
 GATE_PRESETS = [1, 2, 3, 5, 10]
 
 # The request fields a solve carries straight from these settings.
-REQUEST_FIELDS = ["maxSolveTime", "statHands", "gateExploitability",
-                  "targetExploitability", "minSolveTime"]
+REQUEST_FIELDS = ["maxSolveTime", "maxNetSolveTime", "statHands",
+                  "gateExploitability", "targetExploitability", "minSolveTime"]
 
 
 def clamp_number(key: str, value: Any) -> float | int | None:

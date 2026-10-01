@@ -49,6 +49,16 @@ def test_settings_clamp_and_reset():
     assert s.reset() and s.to_wire() == DEFAULTS
 
 
+def test_net_budget_is_optional_and_sent_only_when_set():
+    from zigsolver_coordinator.solver_api import move_payload
+    s = Settings({"maxNetSolveTime": 9000})
+    assert s["maxNetSolveTime"] == 600
+    assert s.set("maxNetSolveTime", "") and s["maxNetSolveTime"] is None
+    body = {"body": {}, "maxSolveTime": 15}
+    assert "maxNetSolveTime" not in move_payload({**body, "maxNetSolveTime": None})
+    assert move_payload({**body, "maxNetSolveTime": 40})["maxNetSolveTime"] == 40
+
+
 def test_regime_and_preflop_state_load_defensively():
     assert RegimeState("exploit").selected == "exploit"  # the pre-advanced format
     r = RegimeState({"selected": "nonsense", "exploitPct": 140, "requireStats": "yes"})
